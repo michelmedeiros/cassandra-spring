@@ -25,7 +25,10 @@ repositories {
 
 
 dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-data-cassandra')
-	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('org.springframework.boot:spring-boot-starter-data-cassandra') {
+		exclude group: 'com.codahale.metrics'
+	}
+	compile group: 'com.datastax.cassandra', name: 'cassandra-driver-core', version: '3.6.0'
+	compile group: 'io.dropwizard.metrics', name: 'metrics-core', version: '3.1.0'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
