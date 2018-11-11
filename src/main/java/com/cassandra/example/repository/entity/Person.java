@@ -1,4 +1,4 @@
-package com.cassandra.example.demo.repository.entity;
+package com.cassandra.example.repository.entity;
 
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;

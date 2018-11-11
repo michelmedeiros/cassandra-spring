@@ -1,4 +1,4 @@
-package com.cassandra.example.demo;
+package com.cassandra.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,9 @@
-package com.cassandra.example.demo;
+package com.cassandra.example;
 
-import com.cassandra.example.demo.repository.PersonRepository;
-import com.cassandra.example.demo.repository.entity.Person;
-import com.cassandra.example.demo.repository.entity.PersonKey;
+import com.cassandra.example.config.CassandraConfig;
+import com.cassandra.example.repository.PersonRepository;
+import com.cassandra.example.repository.entity.Person;
+import com.cassandra.example.repository.entity.PersonKey;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
@@ -10,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.cassandra.core.CassandraAdminOperations;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
@@ -17,12 +20,12 @@ import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = CassandraConfig.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = CassandraConfig.class)
 
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class PersonRepositoryIntegrationTest {
     private static final Log LOGGER = LogFactory.getLog(PersonRepositoryIntegrationTest.class);
 

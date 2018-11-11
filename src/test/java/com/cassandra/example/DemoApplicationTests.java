@@ -1,8 +1,8 @@
-package com.cassandra.example.demo;
+package com.cassandra.example;
 
-import com.cassandra.example.demo.repository.PersonRepository;
-import com.cassandra.example.demo.repository.entity.Person;
-import com.cassandra.example.demo.repository.entity.PersonKey;
+import com.cassandra.example.repository.PersonRepository;
+import com.cassandra.example.repository.entity.Person;
+import com.cassandra.example.repository.entity.PersonKey;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import org.apache.thrift.transport.TTransportException;

@@ -1,6 +1,5 @@
-package com.cassandra.example.demo;
+package com.cassandra.example;
 
-import com.cassandra.example.demo.config.CassandraConfig;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import org.apache.cassandra.exceptions.ConfigurationException;
@@ -9,14 +8,14 @@ import org.cassandraunit.utils.EmbeddedCassandraServerHelper;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.cassandra.core.CassandraAdminOperations;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.IOException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CassandraConfig.class)
+@SpringBootTest
 public class SpringContextIntegrationTest {
 
     public static final String KEYSPACE_CREATION_QUERY = "CREATE KEYSPACE IF NOT EXISTS test_cassandra " +
@@ -24,7 +23,7 @@ public class SpringContextIntegrationTest {
 
     public static final String KEYSPACE_ACTIVATE_QUERY = "USE test_cassandra;";
 
-    public static final String DATA_TABLE_NAME = "book";
+    public static final String DATA_TABLE_NAME = "person_by_first_name";
 
     @Autowired
     private CassandraAdminOperations adminTemplate;
